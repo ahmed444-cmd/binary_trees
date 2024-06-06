@@ -1,51 +1,40 @@
 #ifndef _BINARY_TREES_H_
 #define _BINARY_TREES_H_
+#ifndef BINARY_TREES_H
+#ifndef _BINARY_TREES_H_
+#define _BINARY_TREES_H_
 
 #include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <limits.h>
 
 /**
- * struct binary_tree_s - Node of a binary tree
+ * struct binary_tree_s - Represents a node in a binary tree
  *
- * @n: Integer value held in the node
+ * @n: The integer value contained in the node
  * @parent: Pointer to the node's parent
  * @left: Pointer to the node's left child
  * @right: Pointer to the node's right child
  */
-struct binary_tree_s
+typedef struct binary_tree_s
 {
 	int n;
 	struct binary_tree_s *parent;
 	struct binary_tree_s *left;
 	struct binary_tree_s *right;
-};
-typedef struct binary_tree_s binary_tree_t;
-typedef struct binary_tree_s bst_t;
-typedef struct binary_tree_s avl_t;
-typedef struct binary_tree_s heap_t;
+} binary_tree_t;
 
-/**
- * struct link_s - structure for adv tasks
- *
- * @n: Depth of the specified node
- * @node: Tree node to be stored
- * @next: Pointer to the next node in the linked list
- */
-typedef struct link_s
-{
-	size_t n;
-	struct binary_tree_s const *node;
-	struct link_s *next;
-} link_t;
+/*Binary Search Tr*/
+typedef struct binary_tree_s bst_t;
+/*AVL Tr*/
+typedef struct binary_tree_s avl_t;
+/*Mx Binary Heap*/
+typedef struct binary_tree_s heap_t;
 
 void binary_tree_print(const binary_tree_t *);
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
 void binary_tree_delete(binary_tree_t *tree);
+void delete_tree(binary_tree_t *node);
 int binary_tree_is_leaf(const binary_tree_t *node);
 int binary_tree_is_root(const binary_tree_t *node);
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int));
@@ -61,3 +50,7 @@ int binary_tree_is_full(const binary_tree_t *tree);
 int binary_tree_is_perfect(const binary_tree_t *tree);
 binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+		const binary_tree_t *second);
+
+#endif /* _BINARY_TREES_H_ */
