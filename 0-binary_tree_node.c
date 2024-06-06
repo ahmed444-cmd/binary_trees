@@ -4,10 +4,10 @@
 
 /**
  * binary_tree_node - Creates a new node in a binary tree
- * 
+ *
  * @parent: Pointer to the parent node
  * @value: Integer value to be stored in the new node
- * 
+ *
  * Return: Pointer to the newly created node
  */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
