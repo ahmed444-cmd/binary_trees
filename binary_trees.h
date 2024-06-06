@@ -1,18 +1,15 @@
 #ifndef _BINARY_TREES_H_
 #define _BINARY_TREES_H_
-#ifndef BINARY_TREES_H
-#ifndef _BINARY_TREES_H_
-#define _BINARY_TREES_H_
 
 #include <stddef.h>
 
 /**
- * struct binary_tree_s - Represents a node in a binary tree
+ * struct binary_tree_s - Defines a node in a binary tree
  *
- * @n: The integer value contained in the node
- * @parent: Pointer to the node's parent
- * @left: Pointer to the node's left child
- * @right: Pointer to the node's right child
+ * @n: Integer value stored in the node
+ * @parent: Pointer to the parent node
+ * @left: Pointer to the left child node
+ * @right: Pointer to the right child node
  */
 typedef struct binary_tree_s
 {
